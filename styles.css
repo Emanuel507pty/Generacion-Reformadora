@@ -33,9 +33,9 @@
 
 /* Scroll suave y offset para nav fijo (que no tape las secciones) */
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -45,7 +45,7 @@ body {
 }
 
 [id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 100px;
 }
 
 img, video, iframe {
