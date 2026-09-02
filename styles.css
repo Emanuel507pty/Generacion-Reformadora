@@ -48,7 +48,9 @@ body {
   scroll-margin-top: 130px;
 }
 
-img, video, iframe {
+img,
+video,
+iframe {
   max-width: 100%;
 }
 
@@ -101,10 +103,12 @@ section.position-relative {
 
 /* ========== RESPONSIVE GLOBAL ========== */
 /* Tipografía fluida */
-h1, .display-4 {
+h1,
+.display-4 {
   font-size: clamp(1.8rem, 5vw, 3rem);
 }
-h2, .display-6 {
+h2,
+.display-6 {
   font-size: clamp(1.4rem, 4vw, 2.2rem);
 }
 .lead {
@@ -200,7 +204,7 @@ h2, .display-6 {
 /* Accesibilidad: focus visible global */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #FFC400;
+  outline: 2px solid #ffc400;
   outline-offset: 2px;
 }
 

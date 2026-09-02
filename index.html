@@ -389,11 +389,29 @@
                 obs.observe(video);
             }
         });
-        // Cerrar menú móvil al hacer clic en un enlace
+        // Cerrar menú móvil ANTES de saltar al ancla, para evitar el desfase de scroll
         document.querySelectorAll('#menuNav .nav-link').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (!href || !href.startsWith('#')) return; // deja pasar links normales (ej. index.html)
+
+                const targetEl = document.querySelector(href);
                 const nav = document.getElementById('menuNav');
-                if (nav.classList.contains('show')) {
+                const isMenuOpen = nav.classList.contains('show');
+
+                if (isMenuOpen && targetEl) {
+                    e.preventDefault(); // controlamos el scroll nosotros mismos
+
+                    const collapseInstance = bootstrap.Collapse.getOrCreateInstance(nav);
+
+                    // Esperamos a que el menú termine de cerrarse antes de hacer scroll
+                    nav.addEventListener('hidden.bs.collapse', function onHidden() {
+                        nav.removeEventListener('hidden.bs.collapse', onHidden);
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    });
+
+                    collapseInstance.hide();
+                } else if (isMenuOpen) {
                     bootstrap.Collapse.getOrCreateInstance(nav).hide();
                 }
             });
