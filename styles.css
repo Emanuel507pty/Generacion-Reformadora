@@ -41,18 +41,27 @@ section[id] {
   scroll-margin-top: 78px;
 }
 
-/* Evita scroll horizontal en móvil sin romper sticky del nav ni gutters de Bootstrap */
-body {
+/* Evita scroll horizontal y rebote blanco al deslizar en móvil */
+html, body {
   max-width: 100%;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 img, video, iframe {
   max-width: 100%;
 }
 
-#ubicacion {
+#ubicacion,
+.carousel,
+.carousel-inner,
+section.position-relative {
   overflow: hidden;
+}
+
+.carousel {
+  touch-action: pan-y;
 }
 
 /* Navbar: permite que el menú desplegado baje a segunda fila en móvil */
