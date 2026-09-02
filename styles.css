@@ -55,9 +55,13 @@ img, video, iframe {
   overflow: hidden;
 }
 
-/* FIX navbar: evita que hamburguesa baje en celulares angostos (320px - 430px) */
+/* Navbar: permite que el menú desplegado baje a segunda fila en móvil */
 .navbar .container-fluid {
-  flex-wrap: nowrap !important;
+  flex-wrap: wrap;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
 }
 
 .navbar-brand {
