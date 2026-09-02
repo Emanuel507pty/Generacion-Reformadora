@@ -35,7 +35,7 @@
 html {
   overflow-x: clip;
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -45,7 +45,7 @@ body {
 }
 
 [id] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 110px;
 }
 
 img, video, iframe {
