@@ -1,0 +1,199 @@
+.nav-link {
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #000 !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #000000;
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Scroll suave y offset para nav fijo (que no tape las secciones) */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 78px;
+}
+
+section[id] {
+  scroll-margin-top: 78px;
+}
+
+/* Evita scroll horizontal en móvil sin romper sticky del nav ni gutters de Bootstrap */
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+#ubicacion {
+  overflow: hidden;
+}
+
+/* FIX navbar: evita que hamburguesa baje en celulares angostos (320px - 430px) */
+.navbar .container-fluid {
+  flex-wrap: nowrap !important;
+}
+
+.navbar-brand {
+  font-size: clamp(0.9rem, 3.5vw, 1.25rem);
+}
+
+.navbar-toggler {
+  flex-shrink: 0;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 400px) {
+  .navbar-brand img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .navbar-brand {
+    gap: 0.4rem !important;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar-brand {
+    font-size: 0.82rem;
+  }
+}
+
+/* ========== RESPONSIVE GLOBAL ========== */
+/* Tipografía fluida */
+h1, .display-4 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+h2, .display-6 {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+}
+.lead {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* Secciones: padding se reduce en móvil */
+@media (max-width: 768px) {
+  section.py-5 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
+/* Altura responsive carrusel: fluido en todos los dispositivos */
+.carousel-item img {
+  height: clamp(380px, 55vh, 550px);
+  max-width: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 1920px) {
+  .carousel-item img {
+    height: 700px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    height: 420px !important;
+  }
+  .display-4 {
+    font-size: 1.85rem !important;
+  }
+  section.position-relative .position-absolute {
+    width: 92% !important;
+    padding: 1.2rem !important;
+  }
+}
+
+/* Videos sección ¿Por qué unirte? - mismo tamaño, responsive */
+.video-unete {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  display: block;
+  background: #111;
+}
+
+@media (min-width: 768px) {
+  .video-unete {
+    height: 380px;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-unete {
+    height: 260px;
+  }
+}
+
+/* Imágenes pastorales: no se desbordan, altura auto en móvil */
+#pastores_Bell img,
+#pastores_juv img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  #pastores_Bell img,
+  #pastores_juv img {
+    max-height: 380px;
+  }
+}
+
+/* Ubicación: en móvil el mapa ocupa alto correcto */
+@media (max-width: 991px) {
+  #ubicacion .ratio {
+    min-height: 300px !important;
+  }
+}
+
+/* Footer: en móvil centrado, sin desborde */
+@media (max-width: 991px) {
+  footer .d-flex.gap-3 {
+    flex-wrap: wrap;
+  }
+}
+
+/* Accesibilidad: focus visible global */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #FFC400;
+  outline-offset: 2px;
+}
+
+/* Mejora contraste carousel controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.6));
+}
