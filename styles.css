@@ -44,7 +44,7 @@ body {
   width: 100%;
 }
 
-section[id] {
+[id] {
   scroll-margin-top: 90px;
 }
 
