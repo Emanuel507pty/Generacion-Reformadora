@@ -33,20 +33,19 @@
 
 /* Scroll suave y offset para nav fijo (que no tape las secciones) */
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
-  scroll-padding-top: 78px;
+  scroll-padding-top: 90px;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: clip;
+  width: 100%;
 }
 
 section[id] {
-  scroll-margin-top: 78px;
-}
-
-/* Evita scroll horizontal y rebote blanco al deslizar en móvil */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-  width: 100%;
-  position: relative;
+  scroll-margin-top: 90px;
 }
 
 img, video, iframe {
