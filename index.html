@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es" data-bs-theme="light">
 
 <head>
@@ -163,7 +163,7 @@
 
                     <!-- Imagen a la IZQUIERDA en PC, ABAJO en celular -->
                     <div class="col-lg-5 text-center order-lg-1">
-                        <img src="IMG/Ps_Bell.png"
+                        <img src="IMG/Ps_Bell.webp"
                             alt="Pastores Principales Moisés e Ingrid Bell - Iglesia Gloria Postrera"
                             class="img-fluid rounded-3 shadow" style="max-height: 550px; object-fit: cover;"
                             loading="lazy">
@@ -249,7 +249,8 @@
                     <!-- Líder 1 -->
                     <div class="col">
                         <div class="card bg-dark text-white h-100 border-0 rounded-4 overflow-hidden">
-                            <img src="IMG/lider_luis.png" class="card-img-top" alt="Foto de Luis Cuero"
+                            <img src="IMG/lider_luis.webp" class="card-img-top" alt="Foto de Luis Cuero"
+                                width="800" height="1200" loading="lazy" decoding="async"
                                 style="height: auto; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title mb-1">Luis Cuero</h5>
@@ -262,7 +263,8 @@
                     <!-- Líder 2 -->
                     <div class="col">
                         <div class="card bg-dark text-white h-100 border-0 rounded-4 overflow-hidden">
-                            <img src="IMG/lider_melitza.png" class="card-img-top" alt="Foto de Luis Cuero"
+                            <img src="IMG/lider_melitza.webp" class="card-img-top" alt="Foto de Luis Cuero"
+                                width="800" height="1200" loading="lazy" decoding="async"
                                 style="height: auto; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title mb-1">Melitza Ramos</h5>
@@ -274,10 +276,11 @@
                     <!-- Líder 3 -->
                     <div class="col">
                         <div class="card bg-dark text-white h-100 border-0 rounded-4 overflow-hidden">
-                            <img src="IMG/lider_nadia.png" class="card-img-top" alt="Foto de Luis Cuero"
+                            <img src="IMG/lider_nadia.webp" class="card-img-top" alt="Foto de Luis Cuero"
+                                width="800" height="1200" loading="lazy" decoding="async"
                                 style="height: auto; object-fit: cover;">
                             <div class="card-body">
-                                <h5 class="card-title mb-1">⁠Nadia Samuels</h5>
+                                <h5 class="card-title mb-1">Nadia Samuels</h5>
                                 <p class="text-warning mb-1">Fortaleza</p>
                             </div>
                         </div>
@@ -286,7 +289,8 @@
                     <!-- Líder 4 -->
                     <div class="col">
                         <div class="card bg-dark text-white h-100 border-0 rounded-4 overflow-hidden">
-                            <img src="IMG/lider_alba.png" class="card-img-top" alt="Foto de Luis Cuero"
+                            <img src="IMG/lider_alba.webp" class="card-img-top" alt="Foto de Luis Cuero"
+                                width="800" height="1200" loading="lazy" decoding="async"
                                 style="height: auto; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title mb-1">Alba López</h5>
@@ -298,7 +302,8 @@
                     <!-- Líder 5 -->
                     <div class="col">
                         <div class="card bg-dark text-white h-100 border-0 rounded-4 overflow-hidden">
-                            <img src="IMG/lider_helen.png" class="card-img-top" alt="Foto de Luis Cuero"
+                            <img src="IMG/lider_helen.webp" class="card-img-top" alt="Foto de Luis Cuero"
+                                width="800" height="1200" loading="lazy" decoding="async"
                                 style="height: auto; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title mb-1">Helen Haus</h5>
@@ -325,25 +330,25 @@
                 <div class="gr-grid">
 
                     <div class="tarjeta-pilar">
-                        <video src="IMG/adoracion.mp4" autoplay muted loop playsinline preload="metadata"
+                        <video src="IMG/adoracion.mp4" muted loop playsinline preload="metadata"
                             aria-label="Alabanza - Generación Reformadora"></video>
                         <p>Alabanza</p>
                     </div>
 
                     <div class="tarjeta-pilar">
-                        <video src="IMG/oracion.mp4" autoplay muted loop playsinline preload="metadata"
+                        <video src="IMG/oracion.mp4" muted loop playsinline preload="metadata"
                             aria-label="Oración - Generación Reformadora"></video>
                         <p>Oración</p>
                     </div>
 
                     <div class="tarjeta-pilar">
-                        <video src="IMG/comunidad.mp4" autoplay muted loop playsinline preload="metadata"
+                        <video src="IMG/comunidad.mp4" muted loop playsinline preload="metadata"
                             aria-label="Comunidad - Generación Reformadora"></video>
                         <p>Comunidad</p>
                     </div>
 
                     <div class="tarjeta-pilar">
-                        <video src="IMG/encuentro.mp4" autoplay muted loop playsinline preload="metadata"
+                        <video src="IMG/encuentro.mp4" muted loop playsinline preload="metadata"
                             aria-label="Encuentros GR - Generación Reformadora"></video>
                         <p>Encuentros GR</p>
                     </div>
@@ -359,7 +364,7 @@
 
                     <!-- Imagen del congreso -->
                     <div class="col-lg-5">
-                        <img src="IMG/oneway.png" class="img-fluid rounded-4 shadow w-100"
+                        <img src="IMG/oneway.webp" class="img-fluid rounded-4 shadow w-100"
                             alt="Póster de ONE WAY, congreso anual de Generación Reformadora" loading="lazy">
                     </div>
 
@@ -574,26 +579,33 @@
             setTimeout(hide, 4000); // red por si algo se queda cargando
         })();
         // Asegurar autoplay silencioso (requerido por políticas de navegadores)
-        // Los videos ya tienen loop nativo; no se fuerza reinicio manual
+        // Solo se reproducen/descargan cuando entran en pantalla (ahorro de datos y CPU)
         document.querySelectorAll('.tarjeta-pilar video').forEach(video => {
             video.muted = true;
-            const tryPlay = () => video.play().catch(() => { });
-            // Intentar al cargar
+            let inView = false;
+            const tryPlay = () => {
+                if (inView) video.play().catch(() => { });
+            };
+            // Intentar al cargar (solo si ya está en pantalla)
             if (video.readyState >= 2) tryPlay();
             else video.addEventListener('canplay', tryPlay, { once: true });
             // Reintentar si el navegador pausa por ahorro de energía
             video.addEventListener('pause', () => {
                 if (!video.ended && document.visibilityState === 'visible') tryPlay();
             });
-            // Pausar videos fuera de viewport para ahorrar CPU/batería
+            // Reproducir al entrar y pausar al salir de viewport
             if ('IntersectionObserver' in window) {
                 const obs = new IntersectionObserver(entries => {
                     entries.forEach(e => {
-                        if (e.isIntersecting) tryPlay();
+                        inView = e.isIntersecting;
+                        if (inView) tryPlay();
                         else video.pause();
                     });
                 }, { threshold: 0.2 });
                 obs.observe(video);
+            } else {
+                inView = true;
+                tryPlay();
             }
         });
         // Cerrar menú móvil ANTES de saltar al ancla, para evitar el desfase de scroll
