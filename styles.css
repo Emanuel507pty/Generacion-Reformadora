@@ -1,3 +1,20 @@
+/* ========== COLORES ========== */
+:root {
+  --dorado: #ffc400;
+  --oscuro: #1e1e22;
+}
+
+.texto-dorado {
+  color: var(--dorado);
+}
+.bg-dorado {
+  background-color: #f7c41d;
+}
+.bg-oneway {
+  background-color: #0f0f10;
+}
+
+/* ========== NAVBAR ========== */
 .nav-link {
   position: relative;
   font-weight: 500;
@@ -14,8 +31,8 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: #000000;
-  transition: all 0.3s;
+  background: #000;
+  transition: width 0.3s;
   transform: translateX(-50%);
 }
 
@@ -25,55 +42,12 @@
   width: 80%;
 }
 
-.nav-link:focus-visible {
-  outline: 2px solid #000;
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-
-/* Scroll suave y offset para nav fijo (que no tape las secciones) */
-html {
-  overflow-x: clip;
-  scroll-behavior: smooth;
-  scroll-padding-top: 130px;
-}
-
-body {
-  max-width: 100%;
-  overflow-x: clip;
-  width: 100%;
-}
-
-[id] {
-  scroll-margin-top: 130px;
-}
-
-img,
-video,
-iframe {
-  max-width: 100%;
-}
-
-#ubicacion,
-.carousel,
-.carousel-inner,
-section.position-relative {
-  overflow: hidden;
-}
-
-.carousel {
-  touch-action: pan-y;
-}
-
-/* Navbar: permite que el menú desplegado baje a segunda fila en móvil */
 .navbar .container-fluid {
   flex-wrap: wrap;
 }
-
 .navbar-collapse {
   flex-basis: 100%;
 }
-
 .navbar-brand {
   font-size: clamp(0.9rem, 3.5vw, 1.25rem);
 }
@@ -84,24 +58,30 @@ section.position-relative {
   font-size: 0.9rem;
 }
 
-@media (max-width: 400px) {
-  .navbar-brand img {
-    width: 36px !important;
-    height: 36px !important;
-  }
-  .navbar-brand {
-    gap: 0.4rem !important;
-    font-size: 0.88rem;
-  }
+/* ========== GENERAL ========== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px; /* para que el menú fijo no tape las secciones */
 }
 
-@media (max-width: 360px) {
-  .navbar-brand {
-    font-size: 0.82rem;
-  }
+html,
+body {
+  overflow-x: clip;
 }
 
-/* ========== RESPONSIVE GLOBAL ========== */
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* Accesibilidad: borde visible al navegar con teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--dorado);
+  outline-offset: 2px;
+}
+
 /* Tipografía fluida */
 h1,
 .display-4 {
@@ -115,7 +95,6 @@ h2,
   font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
-/* Secciones: padding se reduce en móvil */
 @media (max-width: 768px) {
   section.py-5 {
     padding-top: 2.5rem !important;
@@ -123,93 +102,194 @@ h2,
   }
 }
 
-/* Altura responsive carrusel: fluido en todos los dispositivos */
-.carousel-item img {
-  height: clamp(380px, 55vh, 550px);
-  max-width: 100%;
-  object-fit: cover;
+/* ========== PORTADA (CARRUSEL) ========== */
+.carousel,
+section.position-relative {
+  overflow: hidden;
 }
 
-@media (min-width: 1920px) {
-  .carousel-item img {
-    height: 700px !important;
-  }
+.carousel {
+  touch-action: pan-y;
 }
 
-@media (max-width: 576px) {
-  .carousel-item img {
-    height: 420px !important;
-  }
-  .display-4 {
-    font-size: 1.85rem !important;
-  }
-  section.position-relative .position-absolute {
-    width: 92% !important;
-    padding: 1.2rem !important;
-  }
-}
-
-/* Videos sección ¿Por qué unirte? - mismo tamaño, responsive */
-.video-unete {
-  width: 100%;
-  height: 340px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  display: block;
-  background: #111;
-}
-
-@media (min-width: 768px) {
-  .video-unete {
-    height: 380px;
-  }
-}
-
-@media (max-width: 576px) {
-  .video-unete {
-    height: 260px;
-  }
-}
-
-/* Imágenes pastorales: no se desbordan, altura auto en móvil */
-#pastores_Bell img,
-#pastores_juv img {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: cover;
-}
-
-@media (max-width: 991px) {
-  #pastores_Bell img,
-  #pastores_juv img {
-    max-height: 380px;
-  }
-}
-
-/* Ubicación: en móvil el mapa ocupa alto correcto */
-@media (max-width: 991px) {
-  #ubicacion .ratio {
-    min-height: 300px !important;
-  }
-}
-
-/* Footer: en móvil centrado, sin desborde */
-@media (max-width: 991px) {
-  footer .d-flex.gap-3 {
-    flex-wrap: wrap;
-  }
-}
-
-/* Accesibilidad: focus visible global */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid #ffc400;
-  outline-offset: 2px;
-}
-
-/* Mejora contraste carousel controls */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.6));
+}
+
+/* ========== NOSOTROS ========== */
+.frase {
+  background: var(--oscuro);
+  color: #e5e5e5;
+  border-left: 15px solid #f5c518;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  line-height: 1.6;
+}
+
+.img-nosotros {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .img-nosotros {
+    height: 300px;
+  }
+}
+
+/* ========== MÁS QUE UN MOVIMIENTO ========== */
+.gr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .gr-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tarjeta-pilar {
+  background: var(--oscuro);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-pilar video {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+.tarjeta-pilar p {
+  margin: 0;
+  padding: 1rem 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--dorado);
+  flex-grow: 1;
+}
+
+@media (max-width: 576px) {
+  .tarjeta-pilar p {
+    font-size: 0.9rem;
+    padding: 0.75rem 0.4rem;
+  }
+}
+
+/* ========== PRELOADER ========== */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--oscuro);
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-img {
+  width: clamp(90px, 20vw, 140px);
+  height: auto;
+  animation: preloader-girar 1.4s linear infinite;
+  filter: drop-shadow(0 0 18px rgba(255, 196, 0, 0.45));
+}
+
+@keyframes preloader-girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader-img {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+/* ========== ÚNETE ========== */
+.etiqueta-ancha {
+  letter-spacing: 3px;
+}
+
+.foto-unete {
+  max-height: 420px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.tarjeta-red {
+  background: var(--oscuro);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.red-sigla {
+  color: var(--dorado);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+/* ========== UBICACIÓN ========== */
+.tarjeta-sede {
+  background: var(--oscuro);
+  border-radius: 0.85rem;
+  padding: 1.75rem;
+  height: 100%;
+  color: #e5e5e5;
+  border-top: 4px solid var(--dorado);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+.tarjeta-sede p,
+.tarjeta-sede li {
+  color: #cfcfcf;
+}
+/* ========== FOOTER ========== */
+.footer-borde {
+  border-top: 4px solid var(--dorado);
+}
+
+.btn-red-borde {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.15rem;
+  border: 1px solid var(--dorado);
+  border-radius: 50rem;
+  background: transparent;
+  color: var(--dorado);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-red-borde:hover {
+  background: var(--dorado);
+  color: #111;
 }

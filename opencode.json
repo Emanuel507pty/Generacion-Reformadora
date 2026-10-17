@@ -1,4 +1,4 @@
 ﻿{
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode/muse-spark-1.2-contributor-free"
+  "model": "opencode/mimo-v2.6-flash-free"
 }
