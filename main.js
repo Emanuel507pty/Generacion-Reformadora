@@ -45,8 +45,19 @@ function activarMenu() {
   });
 }
 
+// 4. Quita el preloader (mínimo 700 ms para que se note)
+const inicio = Date.now();
+function ocultarPreloader() {
+  const pre = document.getElementById('preloader');
+  if (!pre) return;
+  const espera = Math.max(0, 700 - (Date.now() - inicio));
+  setTimeout(() => pre.classList.add('hide'), espera);
+}
+setTimeout(ocultarPreloader, 2500); // red de seguridad por si algo falla
+
 // Primero carga el header y el footer, después activa lo demás
 cargarIncludes().then(() => {
   marcarActivo();
   activarMenu();
+  ocultarPreloader(); // se quita cuando ya está el header
 });
