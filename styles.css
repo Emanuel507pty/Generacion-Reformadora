@@ -293,3 +293,7 @@ section.position-relative {
   background: var(--dorado);
   color: #111;
 }
+section[id],
+footer[id] {
+  scroll-margin-top: 80px;
+}
