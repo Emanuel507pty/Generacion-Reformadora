@@ -1,0 +1,33 @@
+<!-- header.html: menú compartido. Si cambias algo aquí, cámbialo también en el index -->
+<header class="sticky-top shadow-sm" style="z-index: 1020;">
+    <nav class="navbar navbar-expand-lg p-3" style="background-color: #FFC400;">
+        <div class="container-fluid align-items-center justify-content-between justify-content-lg-center gap-lg-5">
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2 fw-bold">
+                <img src="IMG/Logo.png" alt="logo_GR" width="25">
+                <span class="d-none d-lg-inline">Generación Reformadora</span>
+            </a>
+
+            <!-- Botón para celular -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+                aria-controls="menuNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-grow-0" id="menuNav">
+                <!-- Los links llevan "index.html#" para que funcionen desde cualquier página -->
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#pastores_Bell">Cobertura</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#pastores_juv">Pastores Juveniles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#lideres_juveniles">Líderes Juveniles</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#gr">GR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#ubicacion">Ubicación</a></li>
+                    <!-- #info se queda así porque el footer está en todas las páginas -->
+                    <li class="nav-item"><a class="nav-link" href="#info">Info</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

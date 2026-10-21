@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+
+<head>
+    <title>Únete | Generación Reformadora</title>
+    <link rel="icon" href="IMG/icono.jpg" type="image/jpeg">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FFC400" />
+    <!-- Empieza a descargar la imagen de fondo desde el inicio -->
+    <link rel="preload" as="image" href="IMG/fondojesus.webp">
+    <!-- Mismo orden que el index para que se vea igual -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+        /* Portada: imagen de fondo + capa oscura a la izquierda para leer el texto */
+        .hero-unete {
+            min-height: calc(100vh - 80px);
+            /* casi toda la pantalla (menos el header) */
+            background:
+                linear-gradient(90deg, rgba(0, 0, 0, .85) 0%, rgba(0, 0, 0, .6) 45%, rgba(0, 0, 0, .1) 100%),
+                url('IMG/fondojesus.webp') right center / cover no-repeat;
+        }
+
+        /* En celular: capa oscura pareja, porque el texto va encima de la imagen */
+        @media (max-width: 767px) {
+            .hero-unete {
+                background:
+                    linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
+                    url('IMG/fondojesus.webp') 70% center / cover no-repeat;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Aquí se carga header.html -->
+    <div data-include="header.html"></div>
+
+    <main>
+        <!-- PASO 1: portada con imagen. El joven elige si es varón o doncella -->
+        <section class="hero-unete d-flex align-items-center py-5">
+            <div class="container-lg">
+                <div class="col-md-7 col-lg-6 text-center text-md-start text-white">
+                    <p class="fw-bold small etiqueta-ancha mb-2" style="color: #FFC400;">HAY UN LUGAR PARA TI</p>
+                    <h1 class="fw-bold display-5 mb-3">
+                        Únete a <span class="texto-dorado">Generación Reformadora</span>
+                    </h1>
+                    <p class="lead text-white-50 mb-4">Cuéntanos quién eres y te conectamos con el líder que te va a
+                        acompañar.</p>
+
+                    <div
+                        class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start gap-3 mb-5">
+                        <button type="button" class="btn btn-outline-light btn-lg fw-bold px-4 opcion-red"
+                            data-red="varones" aria-pressed="false">
+                            <i class="bi bi-person-fill"></i> Soy varón
+                        </button>
+                        <button type="button" class="btn btn-outline-light btn-lg fw-bold px-4 opcion-red"
+                            data-red="doncellas" aria-pressed="false">
+                            <i class="bi bi-person-fill"></i> Soy doncella
+                        </button>
+                    </div>
+
+                    <!-- Versículo -->
+                    <blockquote class="border-start border-3 border-warning ps-3 mb-0 text-start d-inline-block">
+                        <p class="fst-italic mb-1">«Venid en pos de mí, y os haré pescadores de hombres».</p>
+                        <cite class="small text-white-50">Mateo 4:19 · RVR1960</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASO 2A: Varones → Luis Cuero (oculto hasta que elija) -->
+        <section id="red-varones" class="panel-red py-5 bg-dark d-none" style="scroll-margin-top: 80px;">
+            <div class="container-lg">
+                <div class="row align-items-center g-5">
+                    <div class="col-md-5 text-center">
+                        <img src="IMG/lidercuero2.webp" alt="Foto de Luis Cuero" class="img-fluid rounded-4 shadow"
+                            width="800" height="1200" style="max-height: 500px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-7 text-center text-md-start">
+                        <p class="fw-bold mb-2" style="color: #FFC400; letter-spacing: 1px;">TU LÍDER</p>
+                        <h2 class="fw-bold display-6 text-white mb-2">Luis Cuero</h2>
+                        <p class="lead text-warning mb-3">Pasión y firmeza</p>
+                        <!-- Cambia esta descripción si quieres -->
+                        <p class="text-white-50 mb-4">
+                            Luis acompaña a los varones de Generación Reformadora en su caminar con Dios.
+                            Escríbele: te va a recibir, responder tus dudas y contarte cuándo y dónde nos reunimos.
+                        </p>
+                        <a id="wa-varones" href="#" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-success btn-lg fw-bold px-4 py-3">
+                            <i class="bi bi-whatsapp"></i> Escríbele a Luis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASO 2B: Doncellas → Helen Haus (oculto hasta que elija) -->
+        <section id="red-doncellas" class="panel-red py-5 bg-dark d-none" style="scroll-margin-top: 80px;">
+            <div class="container-lg">
+                <div class="row align-items-center g-5">
+                    <div class="col-md-5 text-center">
+                        <img src="IMG/liderhelen2.webp" alt="Foto de Helen Haus" class="img-fluid rounded-4 shadow"
+                            width="800" height="1200" style="max-height: 500px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-7 text-center text-md-start">
+                        <p class="fw-bold mb-2" style="color: #FFC400; letter-spacing: 1px;">TU LÍDER</p>
+                        <h2 class="fw-bold display-6 text-white mb-2">Helen Haus</h2>
+                        <p class="lead text-warning mb-3">Intensidad y Constancia</p>
+                        <!-- Cambia esta descripción si quieres -->
+                        <p class="text-white-50 mb-4">
+                            Helen acompaña a las doncellas de Generación Reformadora en su caminar con Dios.
+                            Escríbele: te va a recibir, responder tus dudas y contarte cuándo y dónde nos reunimos.
+                        </p>
+                        <a id="wa-doncellas" href="#" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-success btn-lg fw-bold px-4 py-3">
+                            <i class="bi bi-whatsapp"></i> Escríbele a Helen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Aquí se carga footer.html -->
+    <div data-include="footer.html"></div>
+
+    <!-- Bootstrap primero, luego main.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+    <script>
+        // ===== CONFIGURA AQUÍ los números de WhatsApp =====
+        // Formato: 507 + número, sin espacios, sin guiones y sin el signo +
+        const lideres = {
+            varones: { numero: '50762211480', mensaje: 'Hola líder Luis, bendiciones. Vi la página de Generación Reformadora y me gustaría ser parte de GR.' },
+            doncellas: { numero: '50762211480', mensaje: 'Hola líder Helen, bendiciones. Vi la página de Generación Reformadora y me gustaría ser parte de GR.' }
+        };
+
+        // Arma el link de WhatsApp de cada botón con su mensaje
+        Object.entries(lideres).forEach(([red, l]) => {
+            document.getElementById('wa-' + red).href =
+                `https://wa.me/${l.numero}?text=${encodeURIComponent(l.mensaje)}`;
+        });
+
+        // Al tocar "Soy varón" o "Soy doncella": muestra el líder y baja hasta él
+        const botones = document.querySelectorAll('.opcion-red');
+        botones.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const red = btn.dataset.red;
+
+                // Muestra solo el panel elegido
+                document.querySelectorAll('.panel-red').forEach(panel =>
+                    panel.classList.toggle('d-none', panel.id !== 'red-' + red));
+
+                // Pinta en amarillo el botón elegido
+                botones.forEach(b => {
+                    const activo = b === btn;
+                    b.classList.toggle('btn-warning', activo);
+                    b.classList.toggle('btn-outline-light', !activo);
+                    b.setAttribute('aria-pressed', activo);
+                });
+
+                document.getElementById('red-' + red).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+
+</html>
